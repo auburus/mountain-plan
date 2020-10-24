@@ -1,0 +1,20 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+# Black needs to be pinned down to a version
+# because it is in beta, like the last 5 years.
+black = "==20.8b1"
+invoke = "*"
+flake8 = "*"
+pytest = "*"
+
+[packages]
+flask = "*"
+sqlalchemy = "*"
+flask-sqlalchemy = "*"
+
+[requires]
+python_version = "3.8"
