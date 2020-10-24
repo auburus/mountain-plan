@@ -1,6 +1,8 @@
-from app import app
+# pylint: disable=missing-function-docstring
 
 from flask import render_template
+
+from app import app
 
 
 @app.route("/", methods=["GET"])

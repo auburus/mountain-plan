@@ -1,3 +1,4 @@
+# pylint: disable=unused-argument,redefined-outer-name
 import os
 import tempfile
 
@@ -9,6 +10,9 @@ from app import db
 
 @pytest.fixture()
 def test_db():
+    """
+    Temporal database for testing
+    """
     db_fd, db_path = tempfile.mkstemp()
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + db_path
     app.config["TESTING"] = True
@@ -24,5 +28,8 @@ def test_db():
 
 @pytest.fixture
 def client(test_db):
+    """
+    Http client to perform requests in tests
+    """
     with app.test_client() as client:
         yield client

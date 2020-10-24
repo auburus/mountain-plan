@@ -16,4 +16,4 @@ app.config.from_pyfile(os.path.join(ROOT_FOLDER, "config", "flask-dev.cfg"))
 
 db = SQLAlchemy(app)
 
-from . import views
+from . import views  # pylint: disable=wrong-import-position

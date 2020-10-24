@@ -19,11 +19,7 @@ namespace.add_task(dev_server)
 @task
 def lint(c):
     with c.cd(ROOT_DIR):
-        print("\nLinter\n======")
-        # stop the build if there are Python syntax errors or undefined names
-        c.run("flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics")
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        c.run("flake8 . --count --max-complexity=10 --max-line-length=127 --statistics")
+        c.run("pylint app test")
 
 
 namespace.add_task(lint)
